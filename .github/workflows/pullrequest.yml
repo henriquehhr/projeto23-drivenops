@@ -16,7 +16,5 @@ jobs:
           directory: back-end/
           file_name: .env.test
           fail_on_empty: true
-      - name: Compose tests
-        run: docker-compose -f docker-compose-test.yml
       - name: Run tests
-        run: run node_sorteador_app npm run test
+        run: docker-compose -f back-end/docker-compose-test.yml run node_sorteador_app npm run test
